@@ -2,8 +2,9 @@
 """
 Description: This is the Squizee Quiz Application, a Python-based quiz game using tkinter for the GUI.
 Ensure you have tkinter installed to run this application. You can install it using the command: pip install tk
+
 Authors: Bevan Aque Paraz and ChatGPT 4.0
-GitHub: https://github.com/B3vanP/squizee
+GitHub: https://github.com/B3van/squizee
 """
 
 import random
@@ -1276,7 +1277,7 @@ questions = [
             "Adaptive identity",
             "Threat scope reduction"
         ],
-        "answer": "Secured zones"
+        "answer": "Subject role"
     },
     {
         "question": "An organization is leveraging a VPN between its headquarters and a branch location. Which of the following is the VPN protecting?",
@@ -2658,13 +2659,8 @@ class SquizeeApp:
         self.question_label.pack(pady=20)
         self.question_label.pack_forget()  # Hide initially
 
-        self.options_vars = [tk.IntVar() for _ in range(4)]
+        self.options_vars = []
         self.option_checkboxes = []
-        for i in range(4):
-            chk = tk.Checkbutton(root, text="", variable=self.options_vars[i], anchor="w", justify="left")
-            chk.pack(fill="x", padx=20, pady=5)
-            chk.pack_forget()  # Hide initially
-            self.option_checkboxes.append(chk)
 
         self.next_button = tk.Button(root, text="Next", command=self.next_question)
         self.next_button.pack(pady=20)
@@ -2687,8 +2683,6 @@ class SquizeeApp:
         self.next_button.pack(pady=20)  # Show the next button
         self.start_button.pack_forget()  # Hide the start button
         self.question_label.pack(pady=20)  # Show the question label
-        for chk in self.option_checkboxes:
-            chk.pack(fill="x", padx=20, pady=5)  # Show the option checkboxes
         self.ask_num_questions()
 
     def ask_num_questions(self):
@@ -2722,11 +2716,16 @@ class SquizeeApp:
 
     def display_question(self, question):
         self.question_label.config(text=question['question'])
+        for chk in self.option_checkboxes:
+            chk.pack_forget()
+        self.options_vars = []
+        self.option_checkboxes = []
         for i, option in enumerate(question['options']):
-            self.option_checkboxes[i].config(text=option)
-            self.options_vars[i].set(0)
-        for i in range(len(question['options']), 4):
-            self.option_checkboxes[i].pack_forget()
+            var = tk.IntVar()
+            chk = tk.Checkbutton(self.root, text=option, variable=var, anchor="w", justify="left")
+            chk.pack(fill="x", padx=20, pady=5)
+            self.options_vars.append(var)
+            self.option_checkboxes.append(chk)
 
     def end_quiz(self):
         self.result_label.config(text=f"Your final score is {self.score} out of {self.num_questions}")
@@ -2756,8 +2755,6 @@ class SquizeeApp:
         self.next_button.pack(pady=20)  # Show the next button
         self.start_button.pack_forget()  # Hide the start button
         self.question_label.pack(pady=20)  # Show the question label
-        for chk in self.option_checkboxes:
-            chk.pack(fill="x", padx=20, pady=5)  # Show the option checkboxes
         self.available_questions = random.sample(self.questions, len(self.questions))
         self.next_question()
 

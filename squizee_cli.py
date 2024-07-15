@@ -1274,7 +1274,7 @@ questions_data = [
                 "Adaptive identity",
                 "Threat scope reduction"
             ],
-            "answer": "Secured zones"
+            "answer": "Subject role"
         },
         {
             "question": "An organization is leveraging a VPN between its headquarters and a branch location. Which of the following is the VPN protecting?",
