@@ -2640,7 +2640,7 @@ class SquizeeApp:
         self.current_question = None
         self.score = 0
 
-        self.root.title("Squizee Quiz")
+        self.root.title("Squizee Quiz by BEVAN")
 
         self.description_label = tk.Label(root, text="Welcome to Squizee Quiz! Answer the questions and test your knowledge.", wraplength=400, justify="left")
         self.description_label.pack(pady=10)
