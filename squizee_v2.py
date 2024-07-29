@@ -1760,16 +1760,6 @@ questions = [
         "answer": "Key escrow"
     },
     {
-        "question": "A security analyst reviews logs from a NAS appliance and notes the following: The administrator then reviews the following configuration settings: Which of the following should the administrator do to address the vulnerability?",
-        "options": [
-            "Disallow anonymous access.",
-            "Create a new share for public access.",
-            "Enable stronger encryption algorithms.",
-            "Update the SMB to the latest version."
-        ],
-        "answer": "Disallow anonymous access."
-    },
-    {
         "question": "A network security team is investigating an alert within the SIEM for traffic to a known malicious IP address. The source of the traffic is coming from an employee's workstation. The team verifies that no other machines on the network are receiving or sending traffic to this IP address. Which of the following types of malware is the most likely cause of this traffic?",
         "options": [
             "RAT",
@@ -2444,8 +2434,8 @@ questions = [
             "Certificate chain"
         ],
         "answer": [
-            "DNS logs",
-            "Certificate chain"
+            "Switches",
+            "DNS logs"
         ]
     },
     {
@@ -2456,7 +2446,7 @@ questions = [
             "Remote attestation",
             "Endpoint detection and response"
         ],
-        "answer": "Mobile device management"
+        "answer": "Endpoint detection and response"
     },
     {
         "question": "Which of the following vulnerability types is most likely to cause an application to crash or execute terminal commands?",
@@ -2692,10 +2682,12 @@ class SquizeeApp:
             user_answers = [self.current_question['options'][i] for i in selected_options]
             if all(ans in correct_answers for ans in user_answers) and len(user_answers) == len(correct_answers):
                 self.score += 1
-                self.result_label.config(text="Correct!")
+                self.result_label.config(text="Correct!
+")
             else:
                 self.missed_questions.append(self.current_question)
-                self.result_label.config(text=f"Wrong! The correct answer is: {', '.join(correct_answers)}")
+                self.result_label.config(text=f"Wrong! The correct answer is: {', '.join(correct_answers)}
+")
 
         if not self.available_questions:
             self.end_quiz()

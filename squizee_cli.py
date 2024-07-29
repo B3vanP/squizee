@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
 
-"""
 # Description: This is a CLI quiz application that allows users to take quizzes on various topics.
 # Author: Bevan Aque Paraz and ChatGPT 4o
 # GitHub: https://github.com/B3van/squizee
-"""
 
 import json
 import random
@@ -827,16 +824,6 @@ questions_data = [
             ]
         },
         {
-            "question": "After reviewing the following vulnerability scanning report: A security analyst performs the following test: Which of the following would the security analyst conclude for this reported vulnerability?",
-            "options": [
-                "It is a false positive.",
-                "A rescan is required.",
-                "It is considered noise.",
-                "Compensating controls exist."
-            ],
-            "answer": "Compensating controls exist."
-        },
-        {
             "question": "A security consultant needs secure, remote access to a client environment. Which of the following should the security consultant most likely use to gain access?",
             "options": [
                 "EAP",
@@ -1640,8 +1627,8 @@ questions_data = [
             "question": "A Chief Executive Officer hires an outside consultant to perform a penetration test of the network and the company's web applications. Which of the following will the consultant perform if the consultant uses a black-box testing methodology?",
             "options": [
                 "All the company's physical security controls will be tested.",
-                "Only the company\u00e2\u20ac\u2122s web applications will be tested.",
-                "The consultant will test all the company\u00e2\u20ac\u2122s applications.",
+                "Only the company\u2019s web applications will be tested.",
+                "The consultant will test all the company\u2019s applications.",
                 "The consultant will not have access to any company resources."
             ],
             "answer": "The consultant will not have access to any company resources."
@@ -1765,16 +1752,6 @@ questions_data = [
                 "Hashing"
             ],
             "answer": "Key escrow"
-        },
-        {
-            "question": "A security analyst reviews logs from a NAS appliance and notes the following: The administrator then reviews the following configuration settings: Which of the following should the administrator do to address the vulnerability?",
-            "options": [
-                "Disallow anonymous access.",
-                "Create a new share for public access.",
-                "Enable stronger encryption algorithms.",
-                "Update the SMB to the latest version."
-            ],
-            "answer": "Disallow anonymous access."
         },
         {
             "question": "A network security team is investigating an alert within the SIEM for traffic to a known malicious IP address. The source of the traffic is coming from an employee's workstation. The team verifies that no other machines on the network are receiving or sending traffic to this IP address. Which of the following types of malware is the most likely cause of this traffic?",
@@ -2451,8 +2428,8 @@ questions_data = [
                 "Certificate chain"
             ],
             "answer": [
-                "DNS logs",
-                "Certificate chain"
+                "Switches",
+                "DNS logs"
             ]
         },
         {
@@ -2463,7 +2440,7 @@ questions_data = [
                 "Remote attestation",
                 "Endpoint detection and response"
             ],
-            "answer": "Mobile device management"
+            "answer": "Endpoint detection and response"
         },
         {
             "question": "Which of the following vulnerability types is most likely to cause an application to crash or execute terminal commands?",
